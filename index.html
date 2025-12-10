@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>招賢科技 - IT & Data Analysis Services</title>
+    <title>沁淵科技 - IT & Data Analysis Services</title>
     
-    <!-- DNS 預連接 - 加速外部資源加載 -->
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -13,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -39,6 +38,45 @@
             background-image: 
                 radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.03) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
+        }
+
+        /* 語言切換相關樣式 */
+        .lang-en {
+            display: none;
+        }
+
+        /* 當 body 有 english-view class 時的行為 */
+        body.english-view .lang-zh {
+            display: none !important;
+        }
+        body.english-view .lang-en {
+            display: inline; /* 預設 inline，特定區塊可用 block 覆蓋 */
+        }
+        body.english-view div.lang-en,
+        body.english-view p.lang-en,
+        body.english-view h1.lang-en,
+        body.english-view h2.lang-en,
+        body.english-view h3.lang-en,
+        body.english-view li.lang-en {
+            display: block;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-color);
+            color: var(--secondary-color);
         }
 
         /* Header & Navigation */
@@ -76,6 +114,11 @@
             font-size: 1.5rem;
             font-weight: bold;
             letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -401,9 +444,22 @@
                 gap: 1rem;
             }
 
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             nav a {
                 margin-left: 1rem;
+                margin-right: 1rem;
                 font-size: 0.85rem;
+            }
+            
+            .lang-btn {
+                margin-left: 0;
+                margin-top: 0.5rem;
+                width: 100%;
+                text-align: center;
             }
 
             .hero h1 {
@@ -433,195 +489,318 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
             <div class="logo-section">
-
-		<img src="images/logo.png" alt=" Logo" class="logo-img" loading="lazy">
-                <div class="logo-text">招賢科技</div>
+		        <img src="images/logo.png" alt="Logo" class="logo-img" loading="lazy">
+                <div class="logo-text">
+                    <span class="lang-zh">沁淵科技</span>
+                    <span class="lang-en">QinYuan Tech</span>
+                </div>
             </div>
             <nav>
-                <a href="#about">關於我們</a>
-                <a href="#team">團隊</a>
-                <a href="#services">服務</a>
+                <a href="#about">
+                    <span class="lang-zh">關於我們</span>
+                    <span class="lang-en">About</span>
+                </a>
+                <a href="#team">
+                    <span class="lang-zh">團隊</span>
+                    <span class="lang-en">Team</span>
+                </a>
+                <a href="#services">
+                    <span class="lang-zh">服務</span>
+                    <span class="lang-en">Services</span>
+                </a>
+                <button class="lang-btn" onclick="toggleLanguage()">🌐 EN/中</button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>數據驅動 • 創新應用 • 專業服務</h1>
-            <p>致力於提供專業的資訊管理與數據分析服務</p>
+            <h1>
+                <span class="lang-zh">數據驅動 • 創新應用 • 專業服務</span>
+                <span class="lang-en">Data Driven • Innovation • Professional Services</span>
+            </h1>
+            <p>
+                <span class="lang-zh">致力於提供專業的資訊管理與數據分析服務</span>
+                <span class="lang-en">Dedicated to providing professional information management and data analysis services.</span>
+            </p>
         </div>
     </section>
 
-    <!-- Main Container -->
     <div class="container">
-        <!-- About Section -->
         <section id="about">
-            <h2>關於招賢科技</h2>
+            <h2>
+                <span class="lang-zh">關於沁淵科技</span>
+                <span class="lang-en">About QinYuan Technology</span>
+            </h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <h3>專業團隊 × 創新技術</h3>
-                    <p>招賢科技致力於提供全方位的資訊管理與數據分析服務，結合工程技術、資訊管理、法律合規與人工智慧，為客戶創造最大價值。</p>
-                    <p>我們的團隊擁有豐富的實務經驗，來自海洋工程、資訊管理、法律政策等多元背景，能有效整合研發、營運及決策流程，推動企業數位轉型與創新應用。</p>
+                    <h3>
+                        <span class="lang-zh">專業團隊 × 創新技術</span>
+                        <span class="lang-en">Professional Team × Innovative Technology</span>
+                    </h3>
+                    <p class="lang-zh">沁淵科技致力於提供全方位的資訊管理與數據分析服務，結合工程技術、資訊管理、法律合規與人工智慧，為客戶創造最大價值。</p>
+                    <p class="lang-en">QinYuan Technology is dedicated to providing comprehensive information management and data analysis services. We integrate engineering technology, information management, legal compliance, and artificial intelligence to create maximum value for our clients.</p>
+                    
+                    <p class="lang-zh">我們的團隊擁有豐富的實務經驗，來自海洋工程、資訊管理、法律政策等多元背景，能有效整合研發、營運及決策流程，推動企業數位轉型與創新應用。</p>
+                    <p class="lang-en">Our team possesses rich practical experience, coming from diverse backgrounds such as ocean engineering, information management, and legal policy. We effectively integrate R&D, operations, and decision-making processes to drive digital transformation and innovative applications.</p>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-box">
-                        <strong>🎯 資料分析</strong>
-                        <p>將複雜數據轉化為商業價值</p>
+                        <strong>
+                            <span class="lang-zh">🎯 資料分析</span>
+                            <span class="lang-en">🎯 Data Analysis</span>
+                        </strong>
+                        <p>
+                            <span class="lang-zh">將複雜數據轉化為商業價值</span>
+                            <span class="lang-en">Turning complex data into business value</span>
+                        </p>
                     </div>
                     <div class="highlight-box">
-                        <strong>🚀 AI 解決方案</strong>
-                        <p>機器學習與深度學習應用</p>
+                        <strong>
+                            <span class="lang-zh">🚀 AI 解決方案</span>
+                            <span class="lang-en">🚀 AI Solutions</span>
+                        </strong>
+                        <p>
+                            <span class="lang-zh">機器學習與深度學習應用</span>
+                            <span class="lang-en">Machine learning and deep learning applications</span>
+                        </p>
                     </div>
                     <div class="highlight-box">
-                        <strong>🌍 空間資訊</strong>
-                        <p>衛星影像分析與地理資訊</p>
+                        <strong>
+                            <span class="lang-zh">🌍 空間資訊</span>
+                            <span class="lang-en">🌍 Spatial Info</span>
+                        </strong>
+                        <p>
+                            <span class="lang-zh">衛星影像分析與地理資訊</span>
+                            <span class="lang-en">Satellite imagery analysis and GIS</span>
+                        </p>
                     </div>
                     <div class="highlight-box">
-                        <strong>⚖️ 法律合規</strong>
-                        <p>確保數位轉型符合法規</p>
+                        <strong>
+                            <span class="lang-zh">⚖️ 法律合規</span>
+                            <span class="lang-en">⚖️ Legal Compliance</span>
+                        </strong>
+                        <p>
+                            <span class="lang-zh">確保數位轉型符合法規</span>
+                            <span class="lang-en">Ensuring compliance in digital transformation</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Team Section -->
         <section id="team">
-            <h2>專業團隊</h2>
+            <h2>
+                <span class="lang-zh">專業團隊</span>
+                <span class="lang-en">Our Team</span>
+            </h2>
             <div class="team-grid">
-                <!-- CEO -->
                 <div class="team-card">
                     <img src="images/p1.webp" alt="李翊丞" class="team-card-photo" loading="lazy" data-lazy>
                     <div class="team-card-body">
-                        <div class="team-role">執行長 CEO</div>
-                        <h3>李翊丞</h3>
+                        <div class="team-role">CEO</div>
+                        <h3>
+                            <span class="lang-zh">李翊丞</span>
+                            <span class="lang-en">Li, Yi-Cheng</span>
+                        </h3>
                         
-                        <strong>學歷</strong>
-                        <p>國立臺灣大學工程科學及海洋工程學系碩士</p>
+                        <strong>
+                            <span class="lang-zh">學歷</span>
+                            <span class="lang-en">Education</span>
+                        </strong>
+                        <p class="lang-zh">國立臺灣大學工程科學及海洋工程學系碩士</p>
+                        <p class="lang-en">Master, Engineering Science and Ocean Engineering, NTU</p>
 
-                        <strong>專長</strong>
+                        <strong>
+                            <span class="lang-zh">專長</span>
+                            <span class="lang-en">Skills</span>
+                        </strong>
                         <div class="skills-list">
                             <span class="skill-tag">C/C++</span>
                             <span class="skill-tag">Java</span>
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">MATLAB</span>
                             <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">網頁設計</span>
-                            <span class="skill-tag">數值分析</span>
-                            <span class="skill-tag">流場可視化</span>
-                            <span class="skill-tag">光學示蹤技術</span>
-                            <span class="skill-tag">機器學習</span>
-                            <span class="skill-tag">AI模型訓練</span>
-                            <span class="skill-tag">機械結構設計</span>
-                            <span class="skill-tag">淨零碳規劃</span>
+                            <span class="skill-tag"><span class="lang-zh">網頁設計</span><span class="lang-en">Web Design</span></span>
+                            <span class="skill-tag"><span class="lang-zh">數值分析</span><span class="lang-en">Numerical Analysis</span></span>
+                            <span class="skill-tag"><span class="lang-zh">流場可視化</span><span class="lang-en">Flow Vis.</span></span>
+                            <span class="skill-tag"><span class="lang-zh">光學示蹤技術</span><span class="lang-en">PTV/PIV</span></span>
+                            <span class="skill-tag"><span class="lang-zh">機器學習</span><span class="lang-en">Machine Learning</span></span>
+                            <span class="skill-tag"><span class="lang-zh">AI模型訓練</span><span class="lang-en">AI Training</span></span>
+                            <span class="skill-tag"><span class="lang-zh">機械結構設計</span><span class="lang-en">Mech. Design</span></span>
+                            <span class="skill-tag"><span class="lang-zh">淨零碳規劃</span><span class="lang-en">Net-Zero Plan</span></span>
                         </div>
 
-                        <strong>專案經驗</strong>
-                        <p>• AI衛星影像識別用於光電板環差分析</p>
-                        <p>• 以修正型特雷夫茨法與粒子群最佳化演算法求解二維反算邊界偵測問題，開發高效率且準確的電腦模擬模式</p>
-                        <p>• 流場可視化研究，利用光學示蹤法分析孤立波受障礙物阻擾之流速與渦流形成</p>
-                        <p>• 淹水區域分析與預警系統開發，結合AI特徵點標註與機器學習技術</p>
-                        <p>• 雲林縣斗六果菜市場合作社人員、個資、物流控管</p>
-                        <p>• 竹籟文創網頁建置、企劃案設計</p>
+                        <strong>
+                            <span class="lang-zh">專案經驗</span>
+                            <span class="lang-en">Experience</span>
+                        </strong>
+                        <div class="lang-zh">
+                            <p>• AI衛星影像識別用於光電板環差分析</p>
+                            <p>• 以修正型特雷夫茨法與粒子群最佳化演算法求解二維反算邊界偵測問題，開發高效率且準確的電腦模擬模式</p>
+                            <p>• 流場可視化研究，利用光學示蹤法分析孤立波受障礙物阻擾之流速與渦流形成</p>
+                            <p>• 淹水區域分析與預警系統開發，結合AI特徵點標註與機器學習技術</p>
+                            <p>• 雲林縣斗六果菜市場合作社人員、個資、物流控管</p>
+                            <p>• 竹籟文創網頁建置、企劃案設計</p>
+                        </div>
+                        <div class="lang-en">
+                            <p>• AI satellite image recognition for photovoltaic EIA analysis</p>
+                            <p>• Developed efficient simulation models using Modified Trefftz Method and PSO for 2D inverse boundary detection</p>
+                            <p>• Flow visualization study using optical tracking to analyze velocity and vortex formation of solitary waves</p>
+                            <p>• Flood area analysis and warning system development using AI feature tagging and ML</p>
+                            <p>• Logistics and personnel management for Yunlin Douliu Fruit and Vegetable Market</p>
+                            <p>• Website construction and proposal design for Zhulai Cultural & Creative</p>
+                        </div>
 
-                        <a href="https://drive.google.com/file/d/1xzT8VoQMfeiOrDllMz8KyimLUptszC9g/view?usp=drive_link" target="_blank" class="resume-button">查看完整簡歷 →</a>
+                        <a href="https://drive.google.com/file/d/1xzT8VoQMfeiOrDllMz8KyimLUptszC9g/view?usp=drive_link" target="_blank" class="resume-button">
+                            <span class="lang-zh">查看完整簡歷 →</span>
+                            <span class="lang-en">Full Resume →</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- COO -->
                 <div class="team-card">
                     <img src="images/p2.webp" alt="鍾科儀" class="team-card-photo" loading="lazy" data-lazy>
                     <div class="team-card-body">
-                        <div class="team-role">營運長 COO</div>
-                        <h3>鍾科儀</h3>
+                        <div class="team-role">COO</div>
+                        <h3>
+                            <span class="lang-zh">鍾科儀</span>
+                            <span class="lang-en">Zhong, Ke-Yi</span>
+                        </h3>
                         
-                        <strong>學歷</strong>
-                        <p>國立臺灣海洋大學河海工程學系學士</p>
+                        <strong>
+                            <span class="lang-zh">學歷</span>
+                            <span class="lang-en">Education</span>
+                        </strong>
+                        <p class="lang-zh">國立臺灣海洋大學河海工程學系學士</p>
+                        <p class="lang-en">Bachelor, Harbor and River Engineering, NTOU</p>
 
-                        <strong>專長</strong>
+                        <strong>
+                            <span class="lang-zh">專長</span>
+                            <span class="lang-en">Skills</span>
+                        </strong>
                         <div class="skills-list">
                             <span class="skill-tag">FLOW-3D</span>
                             <span class="skill-tag">ArcGIS</span>
                             <span class="skill-tag">AutoCAD</span>
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">MATLAB</span>
-                            <span class="skill-tag">AI深度學習</span>
+                            <span class="skill-tag"><span class="lang-zh">AI深度學習</span><span class="lang-en">Deep Learning</span></span>
                             <span class="skill-tag">GEE</span>
-                            <span class="skill-tag">衛星影像識別</span>
-                            <span class="skill-tag">U-Net架構</span>
-                            <span class="skill-tag">資料視覺化</span>
-                            <span class="skill-tag">團隊領導</span>
-                            <span class="skill-tag">組織動員</span>
-                            <span class="skill-tag">教學與實踐</span>
+                            <span class="skill-tag"><span class="lang-zh">衛星影像識別</span><span class="lang-en">Sat. Imagery</span></span>
+                            <span class="skill-tag"><span class="lang-zh">U-Net架構</span><span class="lang-en">U-Net</span></span>
+                            <span class="skill-tag"><span class="lang-zh">資料視覺化</span><span class="lang-en">Data Vis.</span></span>
+                            <span class="skill-tag"><span class="lang-zh">團隊領導</span><span class="lang-en">Leadership</span></span>
+                            <span class="skill-tag"><span class="lang-zh">組織動員</span><span class="lang-en">Mobilization</span></span>
+                            <span class="skill-tag"><span class="lang-zh">教學與實踐</span><span class="lang-en">Coaching</span></span>
                         </div>
 
-			<strong>專案經驗</strong>
-                        <p>• 基於U-Net架構，結合GEE衛星影像，訓練AI對地表建物進行分析，以利分析區域演變及工程對環境之影響</p>
+			            <strong>
+                            <span class="lang-zh">專案經驗</span>
+                            <span class="lang-en">Experience</span>
+                        </strong>
+                        <p class="lang-zh">• 基於U-Net架構，結合GEE衛星影像，訓練AI對地表建物進行分析，以利分析區域演變及工程對環境之影響</p>
+                        <p class="lang-en">• Based on U-Net architecture and GEE satellite imagery, trained AI to analyze surface buildings for regional evolution and environmental impact assessment</p>
                         
-                        <strong>專業特色</strong>
-                        <p>長期投入資料分析、空間資訊系統及高效能模擬技術之研發與管理。具備卓越的團隊領導與跨部門協作能力，能有效整合研發、營運及決策流程，推動企業數位轉型與創新應用，善於團隊賦能、危機處理與情境判斷。善於教學及引導，在求學期間使室友相繼考上台大與成大。</p>
+                        <strong>
+                            <span class="lang-zh">專業特色</span>
+                            <span class="lang-en">Highlights</span>
+                        </strong>
+                        <p class="lang-zh">長期投入資料分析、空間資訊系統及高效能模擬技術之研發與管理。具備卓越的團隊領導與跨部門協作能力，能有效整合研發、營運及決策流程，推動企業數位轉型與創新應用，善於團隊賦能、危機處理與情境判斷。善於教學及引導，在求學期間使室友相繼考上台大與成大。</p>
+                        <p class="lang-en">Specializes in data analysis, GIS, and high-performance simulation management. Excellent leadership and cross-functional collaboration skills. Skilled in integrating R&D and operations to drive digital transformation. Proficient in team empowerment and crisis management. Known for strong mentoring skills—helped roommates get accepted into NTU and NCKU during university.</p>
                     </div>
                 </div>
 
-                <!-- CTO -->
                 <div class="team-card">
                     <img src="images/p3.webp" alt="陳彥廷" class="team-card-photo" loading="lazy" data-lazy>
                     <div class="team-card-body">
-                        <div class="team-role">首席技術官 CTO</div>
-                        <h3>陳彥廷</h3>
+                        <div class="team-role">CTO</div>
+                        <h3>
+                            <span class="lang-zh">陳彥廷</span>
+                            <span class="lang-en">Chen, Yen-Ting</span>
+                        </h3>
                         
-                        <strong>學歷</strong>
-                        <p>國立中山大學資管系學士</p>
+                        <strong>
+                            <span class="lang-zh">學歷</span>
+                            <span class="lang-en">Education</span>
+                        </strong>
+                        <p class="lang-zh">國立中山大學資管系學士</p>
+                        <p class="lang-en">Bachelor, Information Management, NSYSU</p>
 
-                        <strong>專長</strong>
+                        <strong>
+                            <span class="lang-zh">專長</span>
+                            <span class="lang-en">Skills</span>
+                        </strong>
                         <div class="skills-list">
-                            <span class="skill-tag">資料科學</span>
-                            <span class="skill-tag">資料分析</span>
+                            <span class="skill-tag"><span class="lang-zh">資料科學</span><span class="lang-en">Data Science</span></span>
+                            <span class="skill-tag"><span class="lang-zh">資料分析</span><span class="lang-en">Data Analysis</span></span>
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">數據視覺化</span>
-                            <span class="skill-tag">機器學習</span>
-                            <span class="skill-tag">App開發</span>
-                            <span class="skill-tag">R語言</span>
+                            <span class="skill-tag"><span class="lang-zh">數據視覺化</span><span class="lang-en">Data Vis.</span></span>
+                            <span class="skill-tag"><span class="lang-zh">機器學習</span><span class="lang-en">ML</span></span>
+                            <span class="skill-tag"><span class="lang-zh">App開發</span><span class="lang-en">App Dev</span></span>
+                            <span class="skill-tag"><span class="lang-zh">R語言</span><span class="lang-en">R</span></span>
                             <span class="skill-tag">Java</span>
                             <span class="skill-tag">Stata</span>
-
-
                         </div>
 
-                        <strong>語言能力</strong>
-                        <p>• 英文：多益920分，具國際技術交流與文件閱讀能力</p>
-                        <p>• 日文：JLPT N2，能與日本企業夥伴協作</p>
+                        <strong>
+                            <span class="lang-zh">語言能力</span>
+                            <span class="lang-en">Languages</span>
+                        </strong>
+                        <p class="lang-zh">• 英文：多益920分，具國際技術交流與文件閱讀能力</p>
+                        <p class="lang-en">• English: TOEIC 920, capable of international technical communication</p>
+                        <p class="lang-zh">• 日文：JLPT N2，能與日本企業夥伴協作</p>
+                        <p class="lang-en">• Japanese: JLPT N2, capable of collaboration with Japanese partners</p>
 
-                        <strong>專案經驗</strong>
-                        <p>• 多模態情緒分析模型：整合 Garmin 手錶的生理訊號（心率、HRV、睡眠） 與 用戶日記內容，採用 BERT語言模型搭配生理訊號進行整合，建立預測模型，用以推估用戶未來可能的心理狀態與情緒變化趨勢。</p>
-                        <p>• 交友軟體性別行為分析：透過統計分析與資料探勘，探討單變量與多變量因素如何影響男女在交友軟體上的行為模式；同時運用 BERT 等語言模型進行文字語意分析，以萃取對話中的隱性語言特徵與傾向。</p>
+                        <strong>
+                            <span class="lang-zh">專案經驗</span>
+                            <span class="lang-en">Experience</span>
+                        </strong>
+                        <div class="lang-zh">
+                            <p>• 多模態情緒分析模型：整合 Garmin 手錶的生理訊號（心率、HRV、睡眠） 與 用戶日記內容，採用 BERT語言模型搭配生理訊號進行整合，建立預測模型，用以推估用戶未來可能的心理狀態與情緒變化趨勢。</p>
+                            <p>• 交友軟體性別行為分析：透過統計分析與資料探勘，探討單變量與多變量因素如何影響男女在交友軟體上的行為模式；同時運用 BERT 等語言模型進行文字語意分析，以萃取對話中的隱性語言特徵與傾向。</p>
+                        </div>
+                        <div class="lang-en">
+                            <p>• Multimodal Emotion Analysis Model: Integrated Garmin watch physiological signals (HR, HRV, Sleep) with user diaries using BERT to predict future psychological states and emotional trends.</p>
+                            <p>• Dating App Behavioral Analysis: Explored factors affecting behavior on dating apps via statistical analysis and data mining; used BERT for semantic analysis to extract implicit linguistic traits in conversations.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Legal Advisor -->
                 <div class="team-card">
                     <img src="images/p4.webp" alt="林瑾彤" class="team-card-photo" loading="lazy" data-lazy>
                     <div class="team-card-body">
-                        <div class="team-role">法律顧問 & 前端設計主管</div>
-                        <h3>林瑾彤</h3>
+                        <div class="team-role">
+                            <span class="lang-zh">法律顧問 & 前端設計主管</span>
+                            <span class="lang-en">Legal Advisor & Frontend Lead</span>
+                        </div>
+                        <h3>
+                            <span class="lang-zh">林瑾彤</span>
+                            <span class="lang-en">Lin, Chin-Tung</span>
+                        </h3>
                         
-                        <strong>學歷</strong>
-                        <p style="font-size: 0.88rem;">國立臺灣海洋大學海洋法律與政策學系學、碩士</p>
+                        <strong>
+                            <span class="lang-zh">學歷</span>
+                            <span class="lang-en">Education</span>
+                        </strong>
+                        <p class="lang-zh" style="font-size: 0.88rem;">國立臺灣海洋大學海洋法律與政策學系學、碩士</p>
+                        <p class="lang-en" style="font-size: 0.88rem;">Bachelor & Master, Law of the Sea and Policy, NTOU</p>
 
-                        <strong>專長</strong>
+                        <strong>
+                            <span class="lang-zh">專長</span>
+                            <span class="lang-en">Skills</span>
+                        </strong>
                         <div class="skills-list">
-                            <span class="skill-tag">合規風險評估</span>
-                            <span class="skill-tag">法律文件管理</span>
-                            <span class="skill-tag">海洋法</span>
-                            <span class="skill-tag">科技法規</span>
-                            <span class="skill-tag">法律制度分析</span>
-                            <span class="skill-tag">法規比較</span>
-                            <span class="skill-tag">UI/UX設計</span>
-                            <span class="skill-tag">前端開發</span>
+                            <span class="skill-tag"><span class="lang-zh">合規風險評估</span><span class="lang-en">Compliance</span></span>
+                            <span class="skill-tag"><span class="lang-zh">法律文件管理</span><span class="lang-en">Doc. Mgmt</span></span>
+                            <span class="skill-tag"><span class="lang-zh">海洋法</span><span class="lang-en">Maritime Law</span></span>
+                            <span class="skill-tag"><span class="lang-zh">科技法規</span><span class="lang-en">Tech Law</span></span>
+                            <span class="skill-tag"><span class="lang-zh">法律制度分析</span><span class="lang-en">Legal Analysis</span></span>
+                            <span class="skill-tag"><span class="lang-zh">UI/UX設計</span><span class="lang-en">UI/UX</span></span>
+                            <span class="skill-tag"><span class="lang-zh">前端開發</span><span class="lang-en">Frontend</span></span>
                             <span class="skill-tag">Nuxt/Vue</span>
                             <span class="skill-tag">React</span>
                             <span class="skill-tag">Figma</span>
@@ -629,38 +808,77 @@
                             <span class="skill-tag">PHP</span>
                             <span class="skill-tag">SQL</span>
                             <span class="skill-tag">Shopify</span>
-                            <span class="skill-tag">n8n工作流</span>
-                            <span class="skill-tag">AI API整合</span>
+                            <span class="skill-tag">n8n</span>
+                            <span class="skill-tag">AI API</span>
                         </div>
 
-                        <strong>法律專業</strong>
-                        <p>法律制度分析、法規比較、法律文本整理與案件理解（具法院實習經驗）</p>
+                        <strong>
+                            <span class="lang-zh">法律專業</span>
+                            <span class="lang-en">Legal Expertise</span>
+                        </strong>
+                        <p class="lang-zh">法律制度分析、法規比較、法律文本整理與案件理解（具法院實習經驗）</p>
+                        <p class="lang-en">Legal system analysis, regulatory comparison, legal text organization (Court internship experience).</p>
 
-                        <strong>技術能力</strong>
-                        <p>同時具備 UI/UX 設計與前端開發能力，熟悉自動化流程與 AI API 整合</p>
+                        <strong>
+                            <span class="lang-zh">技術能力</span>
+                            <span class="lang-en">Technical Skills</span>
+                        </strong>
+                        <p class="lang-zh">同時具備 UI/UX 設計與前端開發能力，熟悉自動化流程與 AI API 整合</p>
+                        <p class="lang-en">Proficient in both UI/UX design and frontend development; experienced in automation workflows and AI API integration.</p>
 
-                        <strong>前端Web專案經驗</strong>
-                        <p>• 補習班官網（完整 SaaS 前端系統，含註冊、表單、通知機制）：Nuxt + PrimeVue + TailwindCSS + AOS + Email.js，完成 UI 設計與動態表單寄信系統</p>
-                        <p>• 法律事務所官網：Figma 製作 UI，TeleportHQ 自動切版產出可上線靜態頁面</p>
-                        <p>• 咖啡廳官網：整體 UI/UX 規劃，GSAP 動畫強化品牌風格</p>
+                        <strong>
+                            <span class="lang-zh">前端Web專案經驗</span>
+                            <span class="lang-en">Web Projects</span>
+                        </strong>
+                        <div class="lang-zh">
+                            <p>• 補習班官網（完整 SaaS 前端系統）：Nuxt + PrimeVue + TailwindCSS，完成 UI 設計與動態表單寄信系統</p>
+                            <p>• 法律事務所官網：Figma 製作 UI，TeleportHQ 自動切版產出可上線靜態頁面</p>
+                            <p>• 咖啡廳官網：整體 UI/UX 規劃，GSAP 動畫強化品牌風格</p>
+                        </div>
+                        <div class="lang-en">
+                            <p>• Cram School Website (SaaS Frontend): Nuxt + PrimeVue + TailwindCSS, UI design and dynamic forms.</p>
+                            <p>• Law Firm Website: Figma UI design and TeleportHQ static site generation.</p>
+                            <p>• Cafe Website: UI/UX planning with GSAP animations.</p>
+                        </div>
 
-                        <strong>前後端整合專案經驗</strong>
-                        <p>• Shopify 電商網站：客製 Dawn 模板、Liquid 版面調整、商品資料整理</p>
-                        <p>• n8n 自動化新聞摘要 → Gmail：AI 生成摘要與自動郵件推送</p>
+                        <strong>
+                            <span class="lang-zh">前後端整合專案經驗</span>
+                            <span class="lang-en">Integration Projects</span>
+                        </strong>
+                        <div class="lang-zh">
+                            <p>• Shopify 電商網站：客製 Dawn 模板、Liquid 版面調整、商品資料整理</p>
+                            <p>• n8n 自動化新聞摘要 → Gmail：AI 生成摘要與自動郵件推送</p>
+                        </div>
+                        <div class="lang-en">
+                            <p>• Shopify E-commerce: Dawn template customization, Liquid layout adjustment.</p>
+                            <p>• n8n Automation: AI-generated news summaries pushed to Gmail.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Junior Engineer -->
                 <div class="team-card">
                     <img src="images/p5.webp" alt="曾瀚霆" class="team-card-photo" loading="lazy" data-lazy>
                     <div class="team-card-body">
-                        <div class="team-role">初階工程師</div>
-                        <h3>曾瀚霆</h3>
+                        <div class="team-role">
+                            <span class="lang-zh">初階工程師</span>
+                            <span class="lang-en">Junior Engineer</span>
+                        </div>
+                        <h3>
+                            <span class="lang-zh">曾瀚霆</span>
+                            <span class="lang-en">Zeng, Han-Ting</span>
+                        </h3>
                         
-                        <strong>學歷</strong>
-                        <p>國立臺灣海洋大學河海工程學系學、碩士</p>
+                        <strong>
+                            <span class="lang-zh">學歷</span>
+                            <span class="lang-en">Education</span>
+                        </strong>
+                        <p class="lang-zh">國立臺灣海洋大學河海工程學系學、碩士</p>
+                        <p class="lang-en">Bachelor & Master, Harbor and River Engineering, NTOU</p>
 
-                        <strong>專長</strong>
+                        <strong>
+                            <span class="lang-zh">專長</span>
+                            <span class="lang-en">Skills</span>
+                        </strong>
                         <div class="skills-list">
                             <span class="skill-tag">FLOW-3D</span>
                             <span class="skill-tag">QGIS</span>
@@ -670,57 +888,107 @@
                             <span class="skill-tag">AutoCAD</span>
                         </div>
 
-                        <strong>專案經驗</strong>
-                        <p>• 使用FLOW-3D對貢寮區微水力裝置可行性評估</p>
-                        <p>• LID設施應用於公園、停車場</p>
-                        <p>• 海洋大學社會實踐計畫USR子計畫-協助SROI利害關係人評估</p>
-                        <p>• 雲林縣在地滯洪意願調查計畫</p>
+                        <strong>
+                            <span class="lang-zh">專案經驗</span>
+                            <span class="lang-en">Experience</span>
+                        </strong>
+                        <div class="lang-zh">
+                            <p>• 使用FLOW-3D對貢寮區微水力裝置可行性評估</p>
+                            <p>• LID設施應用於公園、停車場</p>
+                            <p>• 海洋大學社會實踐計畫USR子計畫-協助SROI利害關係人評估</p>
+                            <p>• 雲林縣在地滯洪意願調查計畫</p>
+                        </div>
+                        <div class="lang-en">
+                            <p>• FLOW-3D feasibility assessment for micro-hydropower in Gongliao District</p>
+                            <p>• Application of LID facilities in parks and parking lots</p>
+                            <p>• NTOU USR Project - Assisted in SROI stakeholder assessment</p>
+                            <p>• Investigation on local detention basin willingness in Yunlin County</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services">
-            <h2>服務項目</h2>
+            <h2>
+                <span class="lang-zh">服務項目</span>
+                <span class="lang-en">Our Services</span>
+            </h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>📊 資料分析</h3>
-                    <p>深度數據分析與視覺化呈現，將原始數據轉化為商業價值，提供決策支援與趨勢預測。</p>
+                    <h3>
+                        <span class="lang-zh">📊 資料分析</span>
+                        <span class="lang-en">📊 Data Analysis</span>
+                    </h3>
+                    <p class="lang-zh">深度數據分析與視覺化呈現，將原始數據轉化為商業價值，提供決策支援與趨勢預測。</p>
+                    <p class="lang-en">Deep data analysis and visualization. Converting raw data into business value to support decision-making and trend forecasting.</p>
                 </div>
                 <div class="service-card">
-                    <h3>💻 軟體開發</h3>
-                    <p>前後端整合開發與系統架構設計，打造符合需求的客製化軟體解決方案。</p>
+                    <h3>
+                        <span class="lang-zh">💻 軟體開發</span>
+                        <span class="lang-en">💻 Software Dev</span>
+                    </h3>
+                    <p class="lang-zh">前後端整合開發與系統架構設計，打造符合需求的客製化軟體解決方案。</p>
+                    <p class="lang-en">Full-stack development and system architecture design. Creating customized software solutions tailored to your needs.</p>
                 </div>
                 <div class="service-card">
-                    <h3>🌍 空間資訊</h3>
-                    <p>衛星影像分析與地理資訊系統應用，提供精確的空間數據處理與分析服務。</p>
+                    <h3>
+                        <span class="lang-zh">🌍 空間資訊</span>
+                        <span class="lang-en">🌍 Spatial Info</span>
+                    </h3>
+                    <p class="lang-zh">衛星影像分析與地理資訊系統應用，提供精確的空間數據處理與分析服務。</p>
+                    <p class="lang-en">Satellite image analysis and GIS applications. Providing precise spatial data processing and analysis services.</p>
                 </div>
                 <div class="service-card">
-                    <h3>🤖 AI 解決方案</h3>
-                    <p>機器學習與深度學習應用開發，運用人工智慧技術解決複雜問題。</p>
+                    <h3>
+                        <span class="lang-zh">🤖 AI 解決方案</span>
+                        <span class="lang-en">🤖 AI Solutions</span>
+                    </h3>
+                    <p class="lang-zh">機器學習與深度學習應用開發，運用人工智慧技術解決複雜問題。</p>
+                    <p class="lang-en">Development of machine learning and deep learning applications. Utilizing AI to solve complex problems.</p>
                 </div>
                 <div class="service-card">
-                    <h3>🔧 工程模擬</h3>
-                    <p>CFD與流場分析模擬，提供高精度的工程計算與模擬服務。</p>
+                    <h3>
+                        <span class="lang-zh">🔧 工程模擬</span>
+                        <span class="lang-en">🔧 Engineering Sim</span>
+                    </h3>
+                    <p class="lang-zh">CFD與流場分析模擬，提供高精度的工程計算與模擬服務。</p>
+                    <p class="lang-en">CFD and flow field analysis simulation. Providing high-precision engineering calculation and simulation services.</p>
                 </div>
                 <div class="service-card">
-                    <h3>⚙️ 自動化工作流</h3>
-                    <p>流程優化與系統整合，透過自動化提升工作效率與準確性。</p>
+                    <h3>
+                        <span class="lang-zh">⚙️ 自動化工作流</span>
+                        <span class="lang-en">⚙️ Automation</span>
+                    </h3>
+                    <p class="lang-zh">流程優化與系統整合，透過自動化提升工作效率與準確性。</p>
+                    <p class="lang-en">Process optimization and system integration. Improving efficiency and accuracy through automation.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>招賢科技</p>
-        <p>專業資訊服務 | 數據驅動決策 | 創新應用實踐</p>
-        <p style="font-size: 0.85rem; margin-top: 1.5rem; color: var(--text-light);">聯繫我們 | ss52090801@gmail.com</p>
+        <p>
+            <span class="lang-zh">沁淵科技</span>
+            <span class="lang-en">QinYuan Technology</span>
+        </p>
+        <p>
+            <span class="lang-zh">專業資訊服務 | 數據驅動決策 | 創新應用實踐</span>
+            <span class="lang-en">Professional IT Services | Data-Driven Decisions | Innovation in Practice</span>
+        </p>
+        <p style="font-size: 0.85rem; margin-top: 1.5rem; color: var(--text-light);">
+            <span class="lang-zh">聯繫我們</span>
+            <span class="lang-en">Contact Us</span> 
+            | ss52090801@gmail.com
+        </p>
     </footer>
 
-    <!-- 懶加載腳本 -->
     <script>
+        // 切換語言功能
+        function toggleLanguage() {
+            document.body.classList.toggle('english-view');
+        }
+
         // Intersection Observer API - 實現圖片懶加載
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
